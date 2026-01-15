@@ -136,7 +136,6 @@ address, caption, em {
 }
 .corporate-header .navigation .left-menu-list>li>a {
     font-size: 18px;
-    /* letter-spacing: 0; */
     color: #fff;
     font-weight: 700;
     padding-left: 20px;
@@ -158,6 +157,7 @@ address, caption, em {
 }
 /* javascript: click 했을 때, active 클래스 추가 */
 
+    /* nav 상세(미니 모달) */
 .corporate-header .sub-nav {
     display: none;
     position: absolute;
@@ -178,20 +178,20 @@ address, caption, em {
     padding-left: 16px;
     line-height: 36px;
     font-size: 14px;
-    /* letter-spacing: 0; */
 }
-.corporate-header .navigation .left-menu-list>li .bubble, .corporate-header .navigation .left-menu-list>li .bubble:before {
+
+    /* 잡코리아 인재 추천 메세지 css */
+/* .corporate-header .navigation .left-menu-list>li .bubble, .corporate-header .navigation .left-menu-list>li .bubble:before {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 }
 .corporate-header .navigation .left-menu-list>li .bubble {
-    /* display: inline-block; */
+    display: inline-block;
     top: -11px;
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    /* letter-spacing: 0; */
     text-align: center;
     white-space: nowrap;
     color: #fff;
@@ -199,14 +199,15 @@ address, caption, em {
     font-weight: 600;
     border-radius: 22px;
     background-color: #297fff;
-    /* box-sizing: border-box; */
 }
 .corporate-header .navigation .left-menu-list>li .bubble:before {
     content: "";
     border: 8px solid rgba(0, 0, 0, 0);
     border-top-color: #297fff;
     bottom: -13px;
-}
+} */
+
+    /* 기업 이름 */
 .corporate-header .navigation .right-menu {
     float: right;
 }
@@ -217,26 +218,12 @@ address, caption, em {
 }
 .corporate-header .navigation .right-menu-list>li>a {
     font-size: 16px;
-    /* letter-spacing: 0; */
     color: #fff;
     padding-left: 14px;
     padding-right: 14px;
 }
-.corporate-header .sale-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ff4f4f;
-    border-radius: 2px;
-    /* padding-top: 0; */
-    color: #fff;
-    font-size: 10px;
-    /* letter-spacing: 0; */
-    width: 30px;
-    height: 16px;
-    margin-bottom: 1px;
-}
 
+/* sub-menu(모달) */
 .corporate-header .all-menu-modal, .corporate-header .sub-nav-bg {
     display: none;
     position: absolute;
@@ -247,17 +234,11 @@ address, caption, em {
     padding-top: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
 }
-
-.corporate-header .all-menu-modal, .corporate-header .sub-nav-bg {
-    /* display: none; */
-    position: absolute;
-    left: 0;
-    top: 136px;
-    width: 100%;
-    background: #fff;
-    padding-top: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
+.corporate-header .all-menu-modal.active {
+    display: block;
 }
+/* javascript: click시 active 클래스 추가 */
+
 /* .corporate-header .sub-nav-bg {
     display: none;
     min-height: 235px;
@@ -265,11 +246,14 @@ address, caption, em {
 } */
  .corporate-header .all-menu-modal {
     padding-bottom: 30px;
-    min-height: 352px;
+    /* min-height: 352px; */
     z-index: 333;
 }
 .corporate-header .all-menu-modal .inner {
     position: relative;
+
+    height: 230px;
+    width: 894px;
 }
 .corporate-header .all-menu-modal .category {
     float: left;
@@ -281,7 +265,6 @@ address, caption, em {
 }
 .corporate-header .all-menu-modal .category .title a {
     font-size: 15px;
-    /* letter-spacing: 0; */
     color: #1a1a1a;
     font-weight: 700;
 }
@@ -302,7 +285,6 @@ address, caption, em {
 }
 .corporate-header .all-menu-modal .category>ul>li>ul>li>a {
     font-size: 12px;
-    /* letter-spacing: 0; */
     line-height: 26px;
 }
 .corporate-header .all-menu-modal .category>ul>li>ul>li>a:before {
@@ -337,11 +319,11 @@ address, caption, em {
     background-size: 19px auto;
     margin-right: 9px;
 }
-
-/* javascript: 마우스 올렸을 때, active 클래스 추가 */
 .corporate-header .navigation .left-menu-list>li.active .sub-nav, .corporate-header .navigation .right-menu-list>li.active .sub-nav {
     display: block;
 }
+/* javascript: 마우스 올렸을 때, active 클래스 추가 */
+
 .corporate-header .navigation .left-menu-list>li+.active-fixed>a:after, .corporate-header .navigation .left-menu-list>li+.active>a:after {
     position: absolute;
     margin: 0 auto;
