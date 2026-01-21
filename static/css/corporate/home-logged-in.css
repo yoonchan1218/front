@@ -772,7 +772,6 @@ fieldset, img {
 .recruit-section .data-box ul li a .list-content .rInfo span:last-child {
     padding-right: 0;
 }
-
 .recruit-section .data-box ul li a .list-content .rTagbox {
     display: flex;
     align-items: center;
@@ -788,7 +787,18 @@ fieldset, img {
     opacity: 1;
     pointer-events: auto;
 }
-
+.recruit-section .data-box ul li a .list-content .rTag {
+    flex-shrink: 0;
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 22px;
+    color: #6a6a6a;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    padding: 0 8px;
+    white-space: nowrap;
+}
 
 
 
