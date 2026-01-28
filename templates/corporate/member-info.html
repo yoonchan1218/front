@@ -86,7 +86,7 @@
                                                         아이디
                                                         <span class="point">*</span>
                                                     </dt>
-                                                    <dd>a9243965</dd>
+                                                    <dd>member-id</dd>
                                                 </dl>
                                             </div>
                                             <div class="tbCell">
@@ -96,7 +96,7 @@
                                                         <span class="point">*</span>
                                                     </dt>
                                                     <dd>
-                                                        안현자<button type="button" class="infoBtnBd infoBtnName" id="devRenameRegister"><span>가입자명 변경</span></button>
+                                                        담당자
                                                     </dd>
                                                 </dl>
                                             </div>
@@ -287,12 +287,49 @@
                                         <span>저장</span>
                                     </button>
                                 </div>
-                                <!-- server: 회원탈퇴 페이지로 이동 -->
-                                <a href="" class="infoBtnBd infoBtnLeave">
+                                <!-- server: 회원탈퇴 모달 띄우기 -->
+                                <a href="javascript:;" class="infoBtnBd infoBtnLeave">
                                     <span>회원탈퇴</span>
                                 </a>
                             </fieldset>
                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 회원탈퇴 모달 -->
+            <!-- javascirpt: 탈퇴버튼 클릭 시 active 추가 -->
+            <div class="common-modal company-certify-modal">
+                <div class="modal-dimmed"></div>
+                <div class="modal-contents">
+                    <button class="close-button"></button>
+                    <div class="modal-head">
+                        <h2>회원 탈퇴 전 확인해 주세요</h2>
+                        <p class="head-desc">
+                            회원 탈퇴 시 해당 기업 정보도 함께 삭제됩니다.
+                        </p>
+                    </div>
+                    <div class="modal-data">
+                        <p class="data-info">
+                            회원 탈퇴를 하시면<br>
+                            등록된 기업 정보가 모두 삭제됩니다.
+                        </p>
+                        <p class="data-desc">
+                            기업 정보 및 채용공고가 영구 삭제됩니다.<br>
+                            삭제된 정보는 복구할 수 없습니다.<br>
+                            지원자 정보 열람이 불가능해집니다.
+                        </p>
+                    </div>
+                    <div class="modal-bts">
+                        <div class="leaveAgreeWrap">
+                            <input type="checkbox" id="devLeaveAgree" name="leaveAgree">
+                            <label for="devLeaveAgree">
+                                위 내용을 확인하였으며,
+                                기업 정보가 함께 삭제되는 것에 동의합니다.
+                            </label>
+                        </div>
+                        <!-- server: 회원탈퇴 페이지로 이동 -->
+                        <a href="" class="modal-btn blue xl">탈퇴하기</a>
                     </div>
                 </div>
             </div>

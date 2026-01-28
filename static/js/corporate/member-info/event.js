@@ -37,6 +37,15 @@ const privacyChoiceTerms = document.querySelector(".terms-box");
 // 저장하기
 const submitButton = document.getElementById("devBtnSubmit");
 
+// 회원탈퇴
+const leaveCheckButton = document.querySelector(".infoBtnLeave");
+const leaveModal = document.querySelector(".company-certify-modal");
+const leaveModalCloseButton = document.querySelector(
+    ".company-certify-modal .close-button",
+);
+const leaveButton = document.querySelector(".company-certify-modal .modal-btn");
+const leaveAgreeInput = document.getElementById("devLeaveAgree");
+
 // input value 유효성 검사
 const isValidPassword = (value) => {
     const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,16}$/;
@@ -79,6 +88,47 @@ const isValidPhone = (value) => {
     }
 };
 
+// 저장하기 검사
+const checkValues = (inputList) => {
+    let check = false;
+    let inputValueCheck = [];
+
+    inputList.forEach((input) => {
+        console.log(input);
+
+        const inputWrap = input.closest(".elWrap");
+
+        if (!input.value) {
+            inputWrap.classList.add("error");
+            check = true;
+
+            input === newPasswordInput &&
+                (inputWrap.lastElementChild.innerHTML = `<p id="Password_errorBx">사용 불가한 비밀번호입니다.</p>`);
+
+            console.log(inputWrap);
+        }
+    });
+
+    if (check) {
+        alert("모든 정보를 입력해 주세요.");
+    } else {
+        if (newPasswordInput.value || newPasswordCheckInput.value) {
+            newPasswordInput.value !== newPasswordCheckInput.value &&
+                inputValueCheck.push(newPasswordCheckInput);
+        }
+        !isValidPhone(phoneInput.value) && inputValueCheck.push(phoneInput);
+        !isValidEmail(emailInput.value) && inputValueCheck.push(emailInput);
+    }
+
+    if (!inputValueCheck.length && !check) {
+        form.submit();
+    } else {
+        inputValueCheck.forEach((input) => {
+            input.closest(".elWrap").classList.add("error");
+        });
+    }
+};
+
 // 이메일 유효성 검사
 const isValidEmail = (value) => {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
@@ -110,7 +160,7 @@ textInputList.forEach((input) => {
         }
 
         if (phoneInput.value) {
-            input.value = input.value.replace(/[^0-9]/g, "");
+            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
         }
 
         inputWrap.classList.remove("error");
@@ -121,6 +171,7 @@ textInputList.forEach((input) => {
     input.addEventListener("blur", (e) => {
         inputWrap.classList.remove("on");
         inputWrap.classList.remove("error");
+
         if (input.value) {
             inputWrap.classList.add("ok");
         }
@@ -199,34 +250,29 @@ moreContentButton.addEventListener("click", (e) => {
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (newPasswordInput.value || newPasswordCheckInput.value) {
-        let check = false;
-        let inputValueCheck = [];
+    const textInputListWithoutPW = textInputList.filter(
+        (input) => !input.id.includes("devNewPwd"),
+    );
+    const target =
+        newPasswordInput.value || newPasswordCheckInput.value
+            ? textInputList
+            : textInputListWithoutPW;
 
-        textInputList.forEach((input) => {
-            const inputWrap = input.closest(".elWrap");
+    console.log(target);
+    checkValues(target);
+});
 
-            if (!input.value) {
-                inputWrap.classList.add("error");
-                check = true;
-            }
-        });
+// 회원탈퇴 버튼
+leaveCheckButton.addEventListener("click", (e) => {
+    leaveModal.classList.add("active");
+});
+leaveModalCloseButton.addEventListener("click", (e) => {
+    leaveModal.classList.remove("active");
+});
+leaveButton.addEventListener("click", (e) => {
+    e.preventDefault();
 
-        if (check) {
-            alert("모든 정보를 입력해 주세요.");
-        } else {
-            newPasswordInput.value !== newPasswordCheckInput.value &&
-                inputValueCheck.push(newPasswordCheckInput);
-            !isValidPhone(phoneInput.value) && inputValueCheck.push(phoneInput);
-            !isValidEmail(emailInput.value) && inputValueCheck.push(emailInput);
-        }
-
-        if (!inputValueCheck.length) {
-            form.submit();
-        } else {
-            inputValueCheck.forEach((input) => {
-                input.closest(".elWrap").classList.add("error");
-            });
-        }
-    }
+    leaveAgreeInput.checked
+        ? (location.href = e.target.href)
+        : alert("탈퇴를 진행하시려면 동의해주시기 바랍니다.");
 });
