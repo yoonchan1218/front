@@ -501,12 +501,13 @@ const supportButton = document.querySelector(
 
 supportButton.addEventListener("click", (e) => {
     const form = document.createElement("form");
-    form.id = "devForm";
+    form.setAttribute("id", "devForm");
     form.setAttribute("method", "post");
     // 서버 위치 적어야함.
     form.setAttribute("action", "");
     form.setAttribute("name", "devForm");
 
+    console.log(form);
     form.innerHTML = `
         <input type="hidden" name="Oem_No" id="Oem_No" value="">
     <input type="hidden" name="Gno" id="Gno" value="">
@@ -782,5 +783,5 @@ supportButton.addEventListener("click", (e) => {
         <div class="lyOnPassWrap" id="lyEditInfo" style="display: none;"></div>
     </div>
     `;
-    document.appendChild(form);
+    document.body.appendChild(form);
 });
