@@ -8690,7 +8690,7 @@ body.fixed #nav ul li:last-child:after {
   letter-spacing: 0px;
   color: #000;
   border: 0;
-  background-color: transparent;
+  background-color: #ffffff;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -8700,7 +8700,7 @@ body.fixed #nav ul li:last-child:after {
 }
 .sortBx fieldset .selTyp:after {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 1px;
   right: 1px;
   width: 27px;
@@ -8763,7 +8763,13 @@ body.fixed #nav ul li:last-child:after {
   height: 200px;
   border: 1px solid #e5e6eb;
   background: #fff;
+  
 }
+
+.recruitList li .listCell:hover{
+  border: 1px solid #006e3f;
+}
+
 .recruitList li .listCell .listFoot {
   position: relative;
   height: auto;

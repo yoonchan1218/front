@@ -1,6 +1,4 @@
-@charset "utf-8"; :root {
-    --tab-length-by-column : 5;
-}
+
 
 @font-face {
     font-family: "Pretendard";
@@ -769,6 +767,10 @@ body.ctFixedMode {
     margin-bottom: -1px;
 }
 
+.pageTab .tabs li:nth-child(-n+4):hover {
+    border: 1px solid #006e3f;
+}
+
 .pageTab .tabs li:nth-child(-n+4) {
     border-bottom: 1px solid #e8e8e8;
 }
@@ -806,17 +808,6 @@ body.ctFixedMode {
 
 .pageTab .tabs li:nth-last-child(-n + 4):nth-child(4n + 1), .pageTab .tabs li:nth-last-child(-n + 4):nth-child(4n + 1) ~ li {
     margin-bottom: -1px;
-}
-
-.pageTab .tabs li:last-child:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: calc((100% / var(--tab-length-by-column)) * (var(--tab-length-by-column) * 2) + 1px);
-    bottom: 0;
-    height: 100%;
-    border-right: 1px solid #e8e8e8;
 }
 
 .pageTab .tabs.col03 li {
