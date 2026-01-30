@@ -11420,11 +11420,6 @@ i.jds-icon,i.jds-icon:before {
 .welfare_3_item55:before {
   background: url(https://i.jobkorea.kr/content/images/ver_1/jobs/detail/benefit/type2/welfare_item_group7/welfare_item_2.svg);
 }
-@media only screen and (max-width: 1000px) {
-  img {
-    max-width: 100%;
-  }
-}
 
 /* 신규 type1 */
 .welfare_4 {
