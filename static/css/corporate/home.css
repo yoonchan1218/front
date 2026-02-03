@@ -278,13 +278,13 @@ address, caption, em {
     /* display: block; */
     /* width: 205px;
     height: 28px;
-    background-image: url("");
+    background-image: url("/static/images/logo.png");
     background-size: auto 38px;
     background-position: top -7px left;
     background-repeat: no-repeat;
 } */
 .solution-section .start-list li:first-child .contents-box .texts {
-    margin-top: 77px;
+    margin-top: 53px;
 }
 .solution-section .start-list li:first-child .contents-box .texts h2 {
     color: #333;
@@ -345,16 +345,17 @@ address, caption, em {
 .solution-section .start-list li:nth-child(3) {
     width: 620px;
     background: #fff no-repeat 100% 100%;
-    background-image: url("");
-    background-size: 100%;
+    background-image: url("/static/images/corporate/solution-section-background-gpt.png");
+        background-size: 83%;
+    background-position: 187px -2px;
 }
 .solution-section .start-list li:nth-child(n+3) {
     margin-top: 20px;
     margin-left: 20px;
 }
-.solution-section .start-list li:nth-child(3) .contents-box {
-    background-image: url("https://i.jobkorea.kr/content/images/corporate/main_v2/icon_start_5.png");
-    background-position-y: 38px;
+
+.solution-section .start-list li:nth-child(3) .text-box {
+    bottom: 82px;
 }
 .solution-section .start-list li .text-box .description a {
     display: inline;
